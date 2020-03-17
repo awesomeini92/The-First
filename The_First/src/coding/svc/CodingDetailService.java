@@ -1,0 +1,58 @@
+package coding.svc;
+
+import java.sql.Connection;
+
+import coding.dao.CodingDAO;
+import coding.vo.CodingBean;
+import coding.vo.Coding_refBean;
+
+import static db.JdbcUtil.*;
+
+public class CodingDetailService {
+
+	public CodingBean getArticle(int num) {
+		System.out.println("CodingDetailService - getArticle");
+		Connection con = getConnetion();
+		CodingDAO codingDAO = CodingDAO.getInstance();
+		codingDAO.setConnection(con);
+		
+		CodingBean article = null;
+		
+		article = codingDAO.selectArticle(num);
+		
+		return article;
+	}
+
+	public void updateReadcount(int num) {
+		Connection con = getConnetion();
+		CodingDAO codingDAO = CodingDAO.getInstance();
+		codingDAO.setConnection(con);
+		
+		// BoardDAO 클래스의 updateReadcount() 메서드 호출하여 DB 작업 수행
+		// => 파라미터 : board_num, 리턴타입 : int
+		int updateCount = codingDAO.updateReadcount(num);
+		
+		// 리턴된 결과(updateCount) 가 0보다 크면 commit, 아니면 rollback 수행 
+		if(updateCount > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+	}
+
+	public Coding_refBean getArticle_ref(int num) {
+		Connection con = getConnetion();
+		CodingDAO codingDAO = CodingDAO.getInstance();
+		codingDAO.setConnection(con);
+		
+		Coding_refBean article_ref = null;
+		
+		article_ref = codingDAO.selectArticle_ref(num);
+		
+		return article_ref;
+	}
+
+}
