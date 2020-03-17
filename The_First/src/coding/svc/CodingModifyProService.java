@@ -31,7 +31,7 @@ public class CodingModifyProService {
 		int updateCount = 0;
 		boolean isModifySuccess = false;
 		
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		

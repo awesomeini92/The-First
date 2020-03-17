@@ -12,7 +12,7 @@ public class CodingReplyListService {
 
 	public ArrayList<Coding_refBean> getReplyList(int num) {
 		ArrayList<Coding_refBean> article_refList = null;
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		
@@ -24,7 +24,7 @@ public class CodingReplyListService {
 	}
 	public int getReplyListCount() {
 		int listCount = 0;
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		
@@ -38,7 +38,7 @@ public class CodingReplyListService {
 	
 	public ArrayList<Coding_refBean> getArticleReplyList(int num) {
 		ArrayList<Coding_refBean> article_refList = null;
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		

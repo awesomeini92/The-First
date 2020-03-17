@@ -12,7 +12,7 @@ public class CodingListService {
 
 	public int getListCount() {
 		int listCount = 0;
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		
@@ -25,7 +25,7 @@ public class CodingListService {
 
 	public ArrayList<CodingBean> getArticleList(int page, int limit) {
 		ArrayList<CodingBean> articleList = null;
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		

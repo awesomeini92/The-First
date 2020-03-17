@@ -10,7 +10,7 @@ public class CmmntWriteProService {
 
 	public boolean writeCmmnt(CmmntBean cmmntBean) {
 		boolean isWriteSuccess = false;
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		

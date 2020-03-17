@@ -12,7 +12,7 @@ public class CodingDetailService {
 
 	public CodingBean getArticle(int num) {
 		System.out.println("CodingDetailService - getArticle");
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		
@@ -24,7 +24,7 @@ public class CodingDetailService {
 	}
 
 	public void updateReadcount(int num) {
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		
@@ -44,7 +44,7 @@ public class CodingDetailService {
 	}
 
 	public Coding_refBean getArticle_ref(int num) {
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		

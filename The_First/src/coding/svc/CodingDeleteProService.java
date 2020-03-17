@@ -11,7 +11,7 @@ public class CodingDeleteProService {
 	public boolean removeArticle(int num) {
 		boolean isDeleteSuccess =false;
 		
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		

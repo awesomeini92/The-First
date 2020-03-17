@@ -2,19 +2,19 @@ package coding.svc;
 
 import static db.JdbcUtil.close;
 import static db.JdbcUtil.commit;
-import static db.JdbcUtil.getConnetion;
 import static db.JdbcUtil.rollback;
 
 import java.sql.Connection;
 
 import coding.dao.CodingDAO;
+import static db.JdbcUtil.*;
 
 public class CmmntDeleteProService {
 
 	public boolean deleteCmmnt(int comment_num) {
 		boolean isDeleteSuccess = false;
 		
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		

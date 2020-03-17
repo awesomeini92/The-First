@@ -1,8 +1,7 @@
 package coding.svc;
 
 import static db.JdbcUtil.close;
-import static db.JdbcUtil.getConnetion;
-
+import static db.JdbcUtil.*;
 import java.sql.Connection;
 import java.util.ArrayList;
 
@@ -13,7 +12,7 @@ public class CmmntListService {
 
 	public int getCommentListCount(int num) {
 		int listCount = 0;
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		
@@ -27,7 +26,7 @@ public class CmmntListService {
 	public ArrayList<CmmntBean> getCmmntList(int num, int cmmnt_page) {
 		ArrayList<CmmntBean> cmmntList = null;
 		
-		Connection con = getConnetion();
+		Connection con = getConnection();
 		CodingDAO codingDAO = CodingDAO.getInstance();
 		codingDAO.setConnection(con);
 		
